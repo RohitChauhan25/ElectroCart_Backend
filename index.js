@@ -8,7 +8,7 @@ const cookieParser = require("cookie-parser");
 const app = express();
 const cors = require("cors");
 require("dotenv").config();
-const port = process.env || 8000;
+const port = process.env.PORT || 8000;
 //Import Routes
 const Prod = require("./routes/productRoute");
 const Brand = require("./routes/brandRoutes");
@@ -18,13 +18,10 @@ const Cart = require("./routes/cartRoutes");
 const Type = require("./routes/typesRoute");
 const SubCategory = require("./routes/subCategoryRoute");
 
-const stripe = require("stripe")(
-  "sk_test_51JvwvmSGr3DzIFbiAavqlpOqi6zNPywkGj5EQ83r9Gj4OjeWQAcSLUgNxXdnrk6IGCpgpim8u8S5xC5IZ5C3XdfW00RWrx5LpB"
-);
+const stripe = require("stripe")(process.env.SECRET);
 // Import Schema
 
-const uri =
-  "mongodb+srv://ronychauhan1:bholenath@cluster0.9evehx2.mongodb.net/E-COM-DATABASE?retryWrites=true&w=majority";
+const uri = process.env.URI;
 
 mongoose.set("strictQuery", false);
 mongoose.set("strictPopulate", false);
