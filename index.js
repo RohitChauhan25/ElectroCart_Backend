@@ -73,8 +73,8 @@ app.use("/api/create-checkout-session", async (req, res) => {
     payment_method_types: ["card"],
     line_items: lineItems,
     mode: "payment",
-    success_url: "https://main--electro-gadgets-cart.netlify.app/sucess",
-    cancel_url: "https://main--electro-gadgets-cart.netlify.app/",
+    success_url: "https://electro-cart-front-end.vercel.app/sucess",
+    cancel_url: "https://electro-cart-front-end.vercel.app/",
   });
 
   res.json({ id: session.id });
