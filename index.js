@@ -73,8 +73,8 @@ app.use("/api/create-checkout-session", async (req, res) => {
     payment_method_types: ["card"],
     line_items: lineItems,
     mode: "payment",
-    success_url: "http://localhost:3000/sucess",
-    cancel_url: "http://localhost:3000/cancel",
+    success_url: "https://main--electro-gadgets-cart.netlify.app/sucess",
+    cancel_url: "https://main--electro-gadgets-cart.netlify.app/",
   });
 
   res.json({ id: session.id });
